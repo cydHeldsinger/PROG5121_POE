@@ -1,3 +1,6 @@
+// Testing logic and Assertions adapted from JUnit 5 User Guide
+// URL: https://junit.org/junit5/docs/current/user-guide/
+
 package poe_part1;
 
 import org.junit.jupiter.api.Test;

@@ -24,6 +24,9 @@ public class Login {
     public boolean checkPasswordComplexity(String password) {
         String pattern = "^(?=.*[0-9])(?=.*[A-Z])(?=.*[!@#$%^&*()_+\\-=\\[\\]{};':\"\\\\|,.<>\\/?]).{8,}$";
         return password.matches(pattern);
+        // The following regex logic for password complexity was adapted from:
+// Source: Regular Expressions - Java Documentation / StackOverflow
+// URL: https://docs.oracle.com/javase/8/docs/api/java/util/regex/Pattern.html
     }
 
     // Handles registration logic and returns status
