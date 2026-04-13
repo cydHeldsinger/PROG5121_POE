@@ -1,3 +1,7 @@
+//name: cyd heldsinger
+//st number:st10499467
+//date: 13 april 2026
+//poe part1
 package poe_part1;
 
 import java.util.Scanner;
