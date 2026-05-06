@@ -59,7 +59,18 @@ public String sentMessage(int choice) {
     } else {
         return "Invalid selection";
     }
-}
     }
+    public String captureMessageData(String id, String recipient, String content) {
+    this.messageID = id;
+    this.recipientNumber = recipient;
+    this.messageContent = content;
 
+    if (checkMessageLength(content)) {
+        return "Message successfully captured";
+    } else {
+        return "Message is too long, please try again";
+    }
+}
+}
+    
 

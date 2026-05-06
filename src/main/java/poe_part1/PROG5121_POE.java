@@ -46,6 +46,10 @@ public class PROG5121_POE {
 if (isOk) {
     String input = javax.swing.JOptionPane.showInputDialog("How many messages would you like to enter?");
     int numberOfMessages = Integer.parseInt(input);
+    
+    String[] messageIDs = new String[numberOfMessages];
+String[] recipients = new String[numberOfMessages];
+String[] messageContents = new String[numberOfMessages];
 
     
     Message msgWorker = new Message();
