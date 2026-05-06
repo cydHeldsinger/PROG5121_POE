@@ -42,6 +42,20 @@ public class PROG5121_POE {
 
             boolean isOk = auth.loginUser(logUser, logPass);
             System.out.println(auth.returnLoginStatus(isOk));
-        }
+        
+if (isOk) {
+    String input = javax.swing.JOptionPane.showInputDialog("How many messages would you like to enter?");
+    int numberOfMessages = Integer.parseInt(input);
+
+    
+    Message msgWorker = new Message();
+
+    
+    for (int i = 0; i < numberOfMessages; i++) {
+        
     }
+}
+}
+}
+    
 }
