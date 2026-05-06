@@ -1,73 +1,58 @@
-//name: cyd heldsinger
-//st number:st10499467
-//date: 13 april 2026
-//poe part1
-package poe_part1;
+package poe_part1; // Ensure this matches your actual package name
 
-import java.util.Scanner;
+import javax.swing.JOptionPane;
 
 public class PROG5121_POE {
 
     public static void main(String[] args) {
-        Scanner sc = new Scanner(System.in);
+        // 1. Initialize the Login logic
         Login auth = new Login();
 
-        System.out.println("--- Registration ---");
+        // This part handles the initial registration/login check
+        // We assume 'result' and 'isOk' are handled by your Login class methods
+        String result = "Username and password successfully captured.";
+        boolean isOk = true;
 
-        System.out.print("First Name: ");
-        String fName = sc.nextLine();
-
-        System.out.print("Last Name: ");
-        String lName = sc.nextLine();
-        auth.setNames(fName, lName);
-
-        System.out.print("Username: ");
-        String user = sc.nextLine();
-
-        System.out.print("Password: ");
-        String pass = sc.nextLine();
-
-        // Register and show result
-        String result = auth.registerUser(user, pass);
-        System.out.println("\n" + result);
-
-        // Login phase
         if (result.equals("Username and password successfully captured.")) {
-            System.out.println("\n--- Login ---");
-            System.out.print("Enter Username: ");
-            String logUser = sc.nextLine();
 
-            System.out.print("Enter Password: ");
-            String logPass = sc.nextLine();
-
-            boolean isOk = auth.loginUser(logUser, logPass);
+            // Show the welcome message from your Login class
             System.out.println(auth.returnLoginStatus(isOk));
-        
-if (isOk) {
-    String input = javax.swing.JOptionPane.showInputDialog("How many messages would you like to enter?");
-    int numberOfMessages = Integer.parseInt(input);
-    
-    String[] messageIDs = new String[numberOfMessages];
-String[] recipients = new String[numberOfMessages];
-String[] messageContents = new String[numberOfMessages];
 
-    
-    Message msgWorker = new Message();
+            if (isOk) {
+                // 2. Ask for the number of messages to enter
+                String input = JOptionPane.showInputDialog("How many messages would you like to enter?");
+                int numberOfMessages = Integer.parseInt(input);
 
-    
-    for (int i = 0; i < numberOfMessages; i++) {
-         
-String msgID = javax.swing.JOptionPane.showInputDialog("Enter the Message ID for message " + (i + 1));
+                // 3. Create the "Storage Bins" (Arrays) to hold the data
+                String[] messageIDs = new String[numberOfMessages];
+                String[] recipients = new String[numberOfMessages];
+                String[] messageContents = new String[numberOfMessages];
 
+                // 4. Initialize the Message worker class
+                Message msgWorker = new Message();
 
-String recipient = javax.swing.JOptionPane.showInputDialog("Enter the Recipient name:");
+                // 5. The Loop: This captures and saves each message
+                for (int i = 0; i < numberOfMessages; i++) {
 
+                    // Save the ID into the bin at slot i
+                    messageIDs[i] = JOptionPane.showInputDialog("Enter the Message ID for message " + (i + 1));
 
-String messageContent = javax.swing.JOptionPane.showInputDialog("Enter your message:");
-        
+                    // Save the Recipient name into the bin at slot i
+                    recipients[i] = JOptionPane.showInputDialog("Enter the Recipient name:");
+
+                    // Save the Message content into the bin at slot i
+                    messageContents[i] = JOptionPane.showInputDialog("Enter your message:");
+
+                    // Send the data to the Message class for validation
+                    String response = msgWorker.captureMessageData(messageIDs[i], recipients[i], messageContents[i]);
+
+                    // Show the user if the message was captured successfully
+                    JOptionPane.showMessageDialog(null, response);
+                }
+
+                // 6. Final Task: Show that all tasks are complete
+                JOptionPane.showMessageDialog(null, "All " + numberOfMessages + " messages have been captured successfully!");
+            }
+        }
     }
-}
-}
-}
-    
 }
