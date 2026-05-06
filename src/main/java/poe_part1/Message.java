@@ -41,6 +41,12 @@ public String createMessageHash(String id, String msg, int num) {
     // 4. Return in all caps as per image_21.png
     return hash.toUpperCase();
 }
+
+// Method 5: Check Message Length (image_24.png)
+public boolean checkMessageLength(String msg) {
+    // Requirement: ensure message is no more than 250 characters
+    return msg.length() <= 250;
+}
 // Method 4: Return Message Status (image_24.png)
 public String sentMessage(int choice) {
     // Based on the requirements in image_27.png
