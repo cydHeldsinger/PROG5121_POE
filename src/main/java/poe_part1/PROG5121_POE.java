@@ -52,6 +52,14 @@ if (isOk) {
 
     
     for (int i = 0; i < numberOfMessages; i++) {
+         
+String msgID = javax.swing.JOptionPane.showInputDialog("Enter the Message ID for message " + (i + 1));
+
+
+String recipient = javax.swing.JOptionPane.showInputDialog("Enter the Recipient name:");
+
+
+String messageContent = javax.swing.JOptionPane.showInputDialog("Enter your message:");
         
     }
 }
