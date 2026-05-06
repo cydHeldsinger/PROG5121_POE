@@ -3,8 +3,7 @@
 //date: 13 april 2026
 //poe part1
 /*
- * Click nbfs://nbhost/SystemFileSystem/Templates/Licenses/license-default.txt to change this license
- * Click nbfs://nbhost/SystemFileSystem/Templates/Classes/Class.java to edit this template
+ 
  */
 package poe_part1;
 
@@ -15,21 +14,21 @@ public class Login {
     private String fName;
     private String lName;
 
-    // Check username rules
+   
     public boolean checkUserName(String username) {
         return username.contains("_") && username.length() <= 5;
     }
 
-    // Password complexity check using regex
+   
     public boolean checkPasswordComplexity(String password) {
         String pattern = "^(?=.*[0-9])(?=.*[A-Z])(?=.*[!@#$%^&*()_+\\-=\\[\\]{};':\"\\\\|,.<>\\/?]).{8,}$";
         return password.matches(pattern);
         // The following regex logic for password complexity was adapted from:
-// Source: Regular Expressions - Java Documentation / StackOverflow
-// URL: https://docs.oracle.com/javase/8/docs/api/java/util/regex/Pattern.html
+
+
     }
 
-    // Handles registration logic and returns status
+    
     public String registerUser(String username, String password) {
         if (!checkUserName(username)) {
             return "Username is not correctly formatted; please ensure that your username contains an underscore and is no more than five characters in length.";
@@ -43,12 +42,12 @@ public class Login {
         return "Username and password successfully captured.";
     }
 
-    // Verify login credentials
+    
     public boolean loginUser(String username, String password) {
         return username.equals(regUser) && password.equals(regPass);
     }
 
-    // Return final login message
+    
     public String returnLoginStatus(boolean loggedIn) {
         if (loggedIn) {
             return "Welcome " + fName + ", " + lName + " it is great to see you again.";
